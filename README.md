@@ -80,16 +80,16 @@ No Jupyter Notebook, execute as células do código sequencialmente. A execuçã
 
 ## 📜 Estrutura do Código
 
-📂 **InstagramScraper Class**
+### 📂 **InstagramScraper Class**
 
-📌 `__init__()` → Inicializa o WebDriver e define as credenciais do usuário
-📌 `_setup_driver()` → Configura e retorna uma instância do WebDriver do Chrome
-📌 `login()` → Realiza login no Instagram 
-📌 `fechar_popups()` → Fecha pop-ups desnecessários  
-📌 `acessar_lista()` → Acessa seguidores ou seguidos do perfil do usuário 
-📌 `rolar_modal()` → Rola a lista até carregar todos os itens 
-📌 `obter_lista()` → Extrai os nomes da lista  
-📌 `executar()` → Executa todas as etapas
+- 📌 `__init__()` → Inicializa o WebDriver e define as credenciais do usuário
+- 📌 `_setup_driver()` → Configura e retorna uma instância do WebDriver do Chrome
+- 📌 `login()` → Realiza login no Instagram 
+- 📌 `fechar_popups()` → Fecha pop-ups desnecessários  
+- 📌 `acessar_lista()` → Acessa seguidores ou seguidos do perfil do usuário 
+- 📌 `rolar_modal()` → Rola a lista até carregar todos os itens 
+- 📌 `obter_lista()` → Extrai os nomes da lista  
+- 📌 `executar()` → Executa todas as etapas
 
 ---
 
