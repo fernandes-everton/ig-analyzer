@@ -9,11 +9,12 @@ Este projeto é um **Web Scraper** para o **Instagram** que coleta a lista de se
 ✅ **Login Automático** no Instagram.  
 ✅ **Captura de Lista** de seguidores e seguidos.  
 ✅ **Rolagem Automática** para carregar todos os itens.  
-✅ **Identificação de usuários** que não seguem de volta.  
+✅ **Identificação de Usuários** que não seguem de volta.  
 ✅ **Mensagens de Log** detalhadas para acompanhamento.
+✅ **Execução via Terminal** com entrada segura de credenciais.
 
 ### Customização:
-Este script foi projetado para ser fácil de customizar. Se você deseja coletar outras informações além de seguidores e seguidos (como postagens, curtidas, comentários, etc.), o código pode ser facilmente modificado para acessar essas informações. Basta alterar a função **acessar_lista()** ou adicionar novas funções para capturar diferentes elementos na página do Instagram.
+Este script foi projetado para ser fácil de customizar. Se você deseja coletar outras informações além de seguidores e seguidos (como postagens, curtidas, comentários, etc.), o código pode ser facilmente modificado para acessar essas informações. Basta alterar a função **_acessar_lista()** ou adicionar novas funções para capturar diferentes elementos na página do Instagram.
 
 ---
 
@@ -35,37 +36,24 @@ Este script foi projetado para ser fácil de customizar. Se você deseja coletar
 
 ## 🚀 Como Usar
 
-### 1️⃣ Configurar Usuário e Senha
+### 1️⃣ Executar o Script
 
-Abra o notebook `.ipynb` e altere as variáveis `USERNAME` e `PASSWORD` com suas credenciais do Instagram:
-
-```python
-USERNAME = "seu_username_aqui" 
-PASSWORD = "sua_senha_aqui"
-```
-
-**Aviso de segurança:** 
-
-Evite deixar sua senha em texto simples no código. Para uma abordagem mais segura, você pode armazenar a senha em uma variável de ambiente. Por exemplo:
+Execute o script `.py` diretamente pelo terminal:
 
 ```bash
-export INSTAGRAM_PASSWORD="sua_senha_aqui"
+python instagram_scraper.py
 ```
+Você será solicitado a informar seu **usuário** e **senha** diretamente no terminal.
+    **Nota de segurança:** A senha é solicitada de forma segura (não aparece na tela enquanto você digita).
 
-No código Python, você pode acessar a variável de ambiente usando:
+### 2️⃣ Processo
 
-```python
-import os
-PASSWORD = os.getenv("INSTAGRAM_PASSWORD")
-```
-
-### 2️⃣ Executar o Script
-
-No Jupyter Notebook, execute as células do código sequencialmente. A execução será feita em partes. O código irá:
+O script irá automaticamente:
 1. Fazer login no Instagram.
 2. Capturar a lista de seguidores e seguidos.
 3. Identificar usuários que não seguem de volta.
-4. Exibir um resumo no console.
+4. Gerar um arquivo chamado `nao_seguem_de_volta.txt` com o resultado.
+5. Exibir um resumo da análise no terminal.
 
 ---
 
@@ -82,21 +70,25 @@ No Jupyter Notebook, execute as células do código sequencialmente. A execuçã
 
 ### 📂 **InstagramScraper Class**
 
-- 📌 `__init__()` → Inicializa o WebDriver e define as credenciais do usuário
-- 📌 `_setup_driver()` → Configura e retorna uma instância do WebDriver do Chrome
-- 📌 `login()` → Realiza login no Instagram 
-- 📌 `fechar_popups()` → Fecha pop-ups desnecessários  
-- 📌 `acessar_lista()` → Acessa seguidores ou seguidos do perfil do usuário 
-- 📌 `rolar_modal()` → Rola a lista até carregar todos os itens 
-- 📌 `obter_lista()` → Extrai os nomes da lista  
-- 📌 `executar()` → Executa todas as etapas
+- 📌 `__init__()` → Inicializa o WebDriver e define as credenciais do usuário.
+- 📌 `_setup_driver()` → Configura o navegador Chrome para a automação.
+- 📌 `_login()` → Realiza login no Instagram.
+- 📌 `_fechar_popups()` → Fecha pop-ups iniciais.
+- 📌 `_acessar_lista(tipo)` → Abre a lista de seguidores ou seguidos. 
+- 📌 `_rolar_modal()` → Rola o modal para carregar todos os usuários.
+- 📌 `_obter_lista()` → Extrai os nomes dos usuários carregados.
+- 📌 `_capturar_lista(tipo)` → Captura a lista completa conforme o tipo. 
+- 📌 `_comparar_listas(seguidores, seguindo)` → Identifica quem não segue de volta.
+- 📌 `_salvar_resultados(lista)` → Salva os resultados em um arquivo `.txt`.
+- 📌 `executar()` → Executa todo o processo de login, coleta, análise e salvamento.
 
 ---
 
-## ⚠️ Observações
+## ⚠️ Avisos Importantes
 
-🔹 O Instagram pode bloquear automações repetidas, então use com moderação.  
-🔹 Considere rodar o script em um ambiente seguro e com conta de testes.  
+🔹 Este projeto é apenas para fins educativos.  
+🔹 Automação em redes sociais pode violar os termos de uso da plataforma. Use com responsabilidade. 
+🔹 Evite executar o script repetidamente em um curto intervalo para não ser bloqueado pelo Instagram.
 🔹 O script pode parar de funcionar se o Instagram alterar sua estrutura.
 
 ---
