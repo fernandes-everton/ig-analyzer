@@ -10,7 +10,7 @@ Este projeto é um **Web Scraper** para o **Instagram** que coleta a lista de se
 ✅ **Captura de Lista** de seguidores e seguidos.  
 ✅ **Rolagem Automática** para carregar todos os itens.  
 ✅ **Identificação de Usuários** que não seguem de volta.  
-✅ **Mensagens de Log** detalhadas para acompanhamento.
+✅ **Mensagens de Log** detalhadas para acompanhamento. 
 ✅ **Execução via Terminal** com entrada segura de credenciais.
 
 ### Customização:
@@ -43,7 +43,7 @@ Execute o script `.py` diretamente pelo terminal:
 ```bash
 python instagram_scraper.py
 ```
-Você será solicitado a informar seu **usuário** e **senha** diretamente no terminal.
+Você será solicitado a informar seu **usuário** e **senha** diretamente no terminal.    
     **Nota de segurança:** A senha é solicitada de forma segura (não aparece na tela enquanto você digita).
 
 ### 2️⃣ Processo
@@ -87,8 +87,8 @@ O script irá automaticamente:
 ## ⚠️ Avisos Importantes
 
 🔹 Este projeto é apenas para fins educativos.  
-🔹 Automação em redes sociais pode violar os termos de uso da plataforma. Use com responsabilidade. 
-🔹 Evite executar o script repetidamente em um curto intervalo para não ser bloqueado pelo Instagram.
+🔹 Automação em redes sociais pode violar os termos de uso da plataforma. Use com responsabilidade.     
+🔹 Evite executar o script repetidamente em um curto intervalo para não ser bloqueado pelo Instagram.   
 🔹 O script pode parar de funcionar se o Instagram alterar sua estrutura.
 
 ---
